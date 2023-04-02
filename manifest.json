@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Report Helper",
+    "description": "提交漏洞报告小助手, 通过 URL 获取目标信息并自动填充到补天",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Report Helper"
+    },
+    "content_scripts": [
+      {
+        "js": [
+          "scripts/content.js",
+          "scripts/popup.js"
+        ],
+        "matches": [
+          "*://butian.net/Loo/submit*",
+          "<all_urls>"
+        ]
+      }
+    ],
+    "background": {
+      "service_worker": "scripts/background.js"
+    }
+  }  
